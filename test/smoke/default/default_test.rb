@@ -5,14 +5,11 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  describe user('root') do
-    it { should exist }
-    skip 'This is an example test, replace with your own test.'
-  end
-end
+script = <<-EOH
+  sqlplus "sys/password as sysdba" 
+EOH
 
-describe port(80) do
-  it { should_not be_listening }
-  skip 'This is an example test, replace with your own test.'
+describe powershell(script) do
+  its('stdout') { should match ".*SQL\\*Plus: Release 11.2.0.2.0 Production.*" }
+  its('stdout') { should match ".*SQL\\>.*" }
 end

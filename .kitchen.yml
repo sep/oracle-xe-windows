@@ -1,6 +1,7 @@
----
 driver:
   name: vagrant
+  synced_folders: 
+    - ["C:/Installers", "c:/Installers"]
 
 provisioner:
   name: chef_zero
@@ -8,13 +9,18 @@ provisioner:
   # For example:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
+  require_chef_omnibus: true
 
 verifier:
   name: inspec
+  
+transport:
+  name: winrm
 
 platforms:
-  - name: ubuntu-16.04
-  - name: centos-7.2
+  - name: win10
+    os_type: windows
+    shell_type: powershell
 
 suites:
   - name: default
@@ -23,4 +29,6 @@ suites:
     verifier:
       inspec_tests:
         - test/smoke/default
-    attributes:
+    attributes: 
+        oracle-xe-windows:
+          url: c:/Installers/OracleXE112_Win64/DISK1/setup.exe
