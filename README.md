@@ -7,7 +7,7 @@ This cookbook will only work with the 64 bit version of the Installer
 
 ## Platform:
 
-* Windows 10
+* Windows (= 10)
 
 ## Cookbooks:
 
