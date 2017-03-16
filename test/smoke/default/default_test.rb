@@ -6,10 +6,10 @@
 # found at http://inspec.io/docs/reference/resources/
 
 script = <<-EOH
-  sqlplus "sys/password as sysdba" 
+  sqlplus "sys/password as sysdba"
 EOH
 
 describe powershell(script) do
-  its('stdout') { should match ".*SQL\\*Plus: Release 11.2.0.2.0 Production.*" }
-  its('stdout') { should match ".*SQL\\>.*" }
+  its('stdout') { should match '.*SQL\\*Plus: Release 11.2.0.2.0 Production.*' }
+  its('stdout') { should match '.*SQL\\>.*' }
 end
