@@ -27,4 +27,6 @@ package 'Oracle 11g xe' do
   source oracle_installer
   options "/s /f1\"#{cookbook_tmp}\\OracleXE-Install.iss\" /f2\"#{cookbook_tmp}\\setup.log\""
   notifies :delete, "directory[#{cookbook_tmp}]"
+  timeout 1200
+  retries 1
 end

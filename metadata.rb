@@ -4,7 +4,7 @@ maintainer_email 'rmnowadly@sep.com'
 license 'Apache License 2.0'
 description 'Installs/Configures Oracle 11g XE on Windows'
 long_description 'Installs/Configures oracle-xe-windows'
-version '0.1.0'
+version '0.1.1'
 
 supports 'Windows', '10'
 
