@@ -5,7 +5,7 @@
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 oracle_installer = node['oracle-xe-windows']['url']
-cookbook_tmp = 'C:\\oracle-xe-windows'.frozen
+cookbook_tmp = 'C:\\oracle-xe-windows'.freeze
 
 directory cookbook_tmp do
   recursive true

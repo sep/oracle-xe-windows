@@ -1,7 +1,5 @@
 driver:
   name: vagrant
-  synced_folders:
-    - ["C:/Installers", "c:/Installers"]
 
 provisioner:
   name: chef_zero
@@ -20,7 +18,9 @@ transport:
   name: winrm
 
 platforms:
-  - name: win10
+  - name: Windows-10
+    driver:
+      box: OC_Win10
     os_type: windows
     shell_type: powershell
 
@@ -33,4 +33,4 @@ suites:
         - test/smoke/default
     attributes:
         oracle-xe-windows:
-          url: c:/Installers/OracleXE112_Win64/DISK1/setup.exe
+          url: C:/Installers/OracleEX112_Wind64/setup.exe
